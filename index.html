@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>مكتب أميرة القحطاني للخدمات العامة | جميع الخدمات الإلكترونية</title>
+<meta name="description" content="مكتب أميرة القحطاني للخدمات العامة - إنجاز جميع الخدمات الحكومية والإلكترونية بسرعة ودقة وأسعار منافسة. احجز خدمتك الآن عبر واتساب." />
+<meta property="og:title" content="مكتب أميرة القحطاني للخدمات العامة" />
+<meta property="og:description" content="جميع الخدمات الحكومية والإلكترونية في مكان واحد." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="assets/logo.jpg" />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Cairo:wght@600;700;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#home" class="brand">
+      <img src="assets/logo.jpg" alt="شعار مكتب أميرة القحطاني" />
+      <span>
+        <strong>أميرة القحطاني</strong>
+        <small>للخدمات العامة</small>
+      </span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">الرئيسية</a>
+      <a href="#features">لماذا نحن</a>
+      <a href="#services">خدماتنا</a>
+      <a href="#order">حجز خدمة</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+    <a class="btn btn-sm" href="https://wa.me/966552824188" target="_blank" rel="noopener">واتساب</a>
+    <button class="burger" id="burger" aria-label="القائمة"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <span class="pill">جميع الخدمات الإلكترونية في مكان واحد</span>
+      <h1>مكتب أميرة القحطاني<br><span>للخدمات العامة</span></h1>
+      <p>ننجز طلبك باحترافية وسرية تامة — خدمات حكومية وإلكترونية شاملة، بسرعة في الإنجاز ودقة في التنفيذ وأسعار منافسة.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#services">تصفح الخدمات</a>
+        <a class="btn btn-ghost" href="#order">احجز خدمتك الآن</a>
+      </div>
+      <div class="hero-phone">
+        <a href="tel:0552824188">0552824188</a>
+        <span>متواجدون لخدمتكم في أي وقت</span>
+      </div>
+    </div>
+    <div class="hero-logo">
+      <div class="logo-frame"><img src="assets/logo.jpg" alt="شعار أميرة القحطاني" /></div>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="container feat-grid">
+    <div class="feat"><div class="ic">⚡</div><h3>سرعة في الإنجاز</h3><p>نبدأ في طلبك فور استلامه دون تأخير.</p></div>
+    <div class="feat"><div class="ic">🎯</div><h3>دقة وإتقان</h3><p>مراجعة كاملة للبيانات قبل الرفع.</p></div>
+    <div class="feat"><div class="ic">🔒</div><h3>سرية تامة</h3><p>بياناتك محفوظة وآمنة بالكامل.</p></div>
+    <div class="feat"><div class="ic">٪</div><h3>أسعار منافسة</h3><p>أفضل سعر مقابل خدمة احترافية.</p></div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="sec-head">
+      <h2>خدماتنا</h2>
+      <p>اختر الخدمة التي تحتاجها واضغط «احجز الخدمة» ليتم إضافتها إلى طلبك.</p>
+    </div>
+    <div class="tools">
+      <input type="search" id="search" placeholder="ابحث عن خدمة… مثال: أبشر، تأشيرات، رخص" />
+      <div class="chips" id="chips"></div>
+    </div>
+    <div class="grid" id="servicesGrid"></div>
+    <p class="empty" id="emptyState" hidden>لا توجد خدمة بهذا الاسم — تواصل معنا وسننجزها لك.</p>
+  </div>
+</section>
+
+<section class="order" id="order">
+  <div class="container order-inner">
+    <div class="sec-head">
+      <h2>حجز طلب</h2>
+      <p>أضف الخدمات المطلوبة، اكتب بياناتك، وسيتم إرسال الطلب مباشرة على واتساب.</p>
+    </div>
+
+    <div class="order-grid">
+      <div class="card cart-card">
+        <h3>الخدمات المختارة <span class="count" id="cartCount">0</span></h3>
+        <ul id="cartList" class="cart-list"></ul>
+        <p class="cart-empty" id="cartEmpty">لم تختر أي خدمة بعد.</p>
+      </div>
+
+      <form class="card form-card" id="orderForm" novalidate>
+        <div class="field">
+          <label for="name">الاسم</label>
+          <input id="name" name="name" type="text" maxlength="60" placeholder="اكتب اسمك الكامل" required />
+          <small class="err" data-for="name"></small>
+        </div>
+        <div class="field">
+          <label for="phone">رقم الجوال</label>
+          <input id="phone" name="phone" type="tel" inputmode="numeric" maxlength="15" placeholder="05xxxxxxxx" required />
+          <small class="err" data-for="phone"></small>
+        </div>
+        <div class="field">
+          <label for="city">المدينة (اختياري)</label>
+          <input id="city" name="city" type="text" maxlength="40" placeholder="الرياض" />
+        </div>
+        <div class="field">
+          <label for="details">تفاصيل الطلب</label>
+          <textarea id="details" name="details" rows="4" maxlength="800" placeholder="اكتب تفاصيل الخدمة المطلوبة…" required></textarea>
+          <small class="err" data-for="details"></small>
+        </div>
+        <button type="submit" class="btn btn-block">إرسال الطلب عبر واتساب</button>
+        <p class="hint">سيتم فتح واتساب برسالة جاهزة تحتوي على طلبك.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="sec-head"><h2>تواصل معنا</h2><p>نجاوب على استفساراتك في أي وقت.</p></div>
+    <div class="contact-grid">
+      <a class="ccard" href="https://wa.me/966552824188" target="_blank" rel="noopener"><span>واتساب</span><strong>0552824188</strong></a>
+      <a class="ccard" href="tel:0552824188"><span>اتصال مباشر</span><strong>0552824188</strong></a>
+      <a class="ccard" href="mailto:info@amira-services.com"><span>البريد الإلكتروني</span><strong>info@amira-services.com</strong></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <img src="assets/logo.jpg" alt="شعار أميرة القحطاني" class="f-logo" />
+    <p>مكتب أميرة القحطاني للخدمات العامة — سرعة ♦ دقة ♦ إنجاز ♦ أسعار منافسة</p>
+    <div class="social">
+      <a href="https://wa.me/966552824188" target="_blank" rel="noopener" aria-label="واتساب" title="واتساب">
+        <svg viewBox="0 0 24 24"><path d="M12.04 2A9.9 9.9 0 0 0 2.1 11.9a9.8 9.8 0 0 0 1.35 4.95L2 22l5.3-1.38a9.9 9.9 0 0 0 4.74 1.2h.01A9.9 9.9 0 0 0 22 11.92 9.9 9.9 0 0 0 12.04 2Zm5.79 14.06c-.24.68-1.4 1.3-1.94 1.35-.5.05-.98.23-3.3-.69-2.78-1.1-4.54-3.94-4.68-4.13-.13-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.24-.27.53-.34.7-.34h.5c.16 0 .38-.06.59.45.24.57.8 1.98.87 2.12.07.14.11.3.02.49-.09.19-.14.3-.28.47l-.4.46c-.13.13-.27.28-.12.55.15.27.66 1.09 1.42 1.77.98.87 1.8 1.14 2.07 1.28.26.13.42.11.57-.07.15-.19.66-.77.83-1.04.17-.27.35-.22.58-.13.24.09 1.5.71 1.76.84.26.13.43.2.5.31.06.11.06.65-.18 1.33Z"/></svg>
+      </a>
+      <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="انستجرام" title="انستجرام">
+        <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2Zm0 3.05A6.75 6.75 0 1 0 18.75 12 6.75 6.75 0 0 0 12 5.25Zm0 11.13A4.38 4.38 0 1 1 16.38 12 4.38 4.38 0 0 1 12 16.38Zm6.99-11.4a1.58 1.58 0 1 1-1.58-1.58 1.58 1.58 0 0 1 1.58 1.58Z"/></svg>
+      </a>
+      <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="تويتر" title="تويتر / X">
+        <svg viewBox="0 0 24 24"><path d="M17.53 3h3.24l-7.08 8.09L22 21h-6.53l-5.1-6.67L4.5 21H1.25l7.57-8.65L2 3h6.7l4.6 6.09L17.53 3Zm-1.14 16.06h1.8L7.7 4.85H5.77l10.62 14.21Z"/></svg>
+      </a>
+      <a href="https://snapchat.com" target="_blank" rel="noopener" aria-label="سناب شات" title="سناب شات">
+        <svg viewBox="0 0 24 24"><path d="M12 2c2.9 0 4.75 2.2 4.75 5.06 0 .87-.06 1.6-.1 2.13.36.2.83.24 1.36.02.5-.2 1.05.06 1.2.55.15.5-.13 1-.62 1.2-.53.22-1.1.4-1.5.62-.3.16-.4.3-.34.55.36 1.5 2 3.2 3.6 3.6.4.1.65.44.6.84-.07.5-.5.72-.95.85-.6.17-1.28.24-1.53.5-.15.16-.13.44-.25.72-.14.32-.44.44-.83.4-.5-.05-1.1-.2-1.85-.05-.7.14-1.28.62-2 1.12-.63.44-1.3.79-2.24.79s-1.61-.35-2.24-.79c-.72-.5-1.3-.98-2-1.12-.75-.15-1.35 0-1.85.05-.39.04-.69-.08-.83-.4-.12-.28-.1-.56-.25-.72-.25-.26-.93-.33-1.53-.5-.45-.13-.88-.35-.95-.85-.05-.4.2-.74.6-.84 1.6-.4 3.24-2.1 3.6-3.6.06-.25-.04-.39-.34-.55-.4-.22-.97-.4-1.5-.62-.49-.2-.77-.7-.62-1.2.15-.49.7-.75 1.2-.55.53.22 1 .18 1.36-.02-.04-.53-.1-1.26-.1-2.13C7.25 4.2 9.1 2 12 2Z"/></svg>
+      </a>
+      <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="تيك توك" title="تيك توك">
+        <svg viewBox="0 0 24 24"><path d="M16.5 2h-3v13.1a2.6 2.6 0 1 1-2.2-2.57v-3.06a5.66 5.66 0 1 0 5.2 5.63V9.1a6.9 6.9 0 0 0 4 1.27V7.3a4 4 0 0 1-4-4Z"/></svg>
+      </a>
+      <a href="mailto:info@amira-services.com" aria-label="البريد الإلكتروني" title="البريد الإلكتروني">
+        <svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm9 7.2 7.4-4.6H4.6L12 12.2Zm0 2.35L4 9.6V17h16V9.6l-8 4.95Z"/></svg>
+      </a>
+    </div>
+    <small>© <span id="year"></span> جميع الحقوق محفوظة — مكتب أميرة القحطاني للخدمات العامة</small>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/966552824188" target="_blank" rel="noopener" aria-label="تواصل واتساب">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2A9.9 9.9 0 0 0 2.1 11.9a9.8 9.8 0 0 0 1.35 4.95L2 22l5.3-1.38a9.9 9.9 0 0 0 4.74 1.2h.01A9.9 9.9 0 0 0 22 11.92 9.9 9.9 0 0 0 12.04 2Zm5.79 14.06c-.24.68-1.4 1.3-1.94 1.35-.5.05-.98.23-3.3-.69-2.78-1.1-4.54-3.94-4.68-4.13-.13-.19-1.11-1.48-1.11-2.82 0-1.34.7-2 .95-2.27.24-.27.53-.34.7-.34h.5c.16 0 .38-.06.59.45.24.57.8 1.98.87 2.12.07.14.11.3.02.49-.09.19-.14.3-.28.47l-.4.46c-.13.13-.27.28-.12.55.15.27.66 1.09 1.42 1.77.98.87 1.8 1.14 2.07 1.28.26.13.42.11.57-.07.15-.19.66-.77.83-1.04.17-.27.35-.22.58-.13.24.09 1.5.71 1.76.84.26.13.43.2.5.31.06.11.06.65-.18 1.33Z"/></svg>
+</a>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
