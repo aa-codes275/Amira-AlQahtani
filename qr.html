@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>مولد رموز QR | مكتب أميرة القحطاني للخدمات العامة</title>
+<meta name="description" content="أنشئ رمز الاستجابة السريعة QR Code لأي رابط أو نص بسهولة لمكتب أميرة القحطاني للخدمات العامة." />
+<link rel="icon" href="assets/logo.jpg" />
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Cairo:wght@600;700;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<!-- مكتبة توليد QR Code الشهيرة (QRCode.js) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  .qr-section {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, var(--bg), var(--cream-soft));
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+  .qr-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .qr-output {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  #qrcode {
+    padding: 15px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    display: inline-block;
+  }
+  #qrcode img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+  .preset-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .preset-btn {
+    background: var(--cream-soft);
+    border: 1px solid var(--line);
+    color: var(--brown);
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .preset-btn:hover {
+    background: var(--copper);
+    color: #fff;
+    border-color: transparent;
+  }
+</style>
+</head>
+<body>
+
+<!-- شريط التنقل العلوي -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="index.html#home" class="brand">
+      <img src="assets/logo.jpg" alt="شعار مكتب أميرة القحطاني" />
+      <span>
+        <strong>أميرة القحطاني</strong>
+        <small>للخدمات العامة</small>
+      </span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html#home">الرئيسية</a>
+      <a href="index.html#services">خدماتنا</a>
+      <a href="index.html#order">حجز خدمة</a>
+      <a href="index.html#contact">تواصل معنا</a>
+      <a href="qr.html" style="color: var(--copper);">مولد QR</a>
+    </nav>
+    <a class="btn btn-sm" href="https://wa.me/966552824188" target="_blank" rel="noopener">واتساب</a>
+    <button class="burger" id="burger" aria-label="القائمة"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- قسم إنشاء الـ QR -->
+<section class="qr-section">
+  <div class="container">
+    <div class="sec-head">
+      <h2>مولد رموز QR الذكي</h2>
+      <p>الرابط الخاص بالموقع مُثبت مسبقاً، ويمكنك تعديله لأي رابط أو نص آخر وتحويله فورا لـ QR Code.</p>
+    </div>
+
+    <div class="qr-card">
+      <div style="margin-bottom: 1rem; text-align: right;">
+        <label style="font-weight: 700; font-size: 0.9rem; color: var(--brown-dark); display: block; margin-bottom: 0.5rem;">روابط جاهزة وسريعة:</label>
+        <div class="preset-btns">
+          <button type="button" class="preset-btn" data-val="https://aa-codes275.github.io/Amira-AlQahtani/">رابط الموقع الأساسي</button>
+          <button type="button" class="preset-btn" data-val="https://wa.me/966552824188">واتساب المباشر</button>
+        </div>
+      </div>
+
+      <form id="qrForm" onsubmit="return false;">
+        <div class="field">
+          <label for="textInput">النص أو الرابط المراد تحويله</label>
+          <input type="text" id="textInput" placeholder="اكتب الرابط أو النص هنا..." required value="https://aa-codes275.github.io/Amira-AlQahtani/" />
+        </div>
+        <button type="button" id="generateBtn" class="btn btn-block">توليد رمز QR</button>
+      </form>
+
+      <div class="qr-output" id="qrOutputContainer">
+        <div id="qrcode"></div>
+        <button type="button" id="downloadBtn" class="btn btn-ghost btn-sm">تحميل صورة QR</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- تذييل الصفحة -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <img src="assets/logo.jpg" alt="شعار أميرة القحطاني" class="f-logo" />
+    <p>مكتب أميرة القحطاني للخدمات العامة — سرعة ♦ دقة ♦ إنجاز ♦ أسعار منافسة</p>
+    <small>© <span id="year"></span> جميع الحقوق محفوظة — مكتب أميرة القحطاني للخدمات العامة</small>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- سكربت التشغيل والتفاعل -->
+<script>
+  var burger = document.getElementById("burger"), links = document.getElementById("navLinks");
+  if(burger && links) {
+    burger.addEventListener("click", function () {
+      links.classList.toggle("open");
+      burger.classList.toggle("open");
+    });
+  }
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  function toast(msg) {
+    var t = document.getElementById("toast");
+    t.textContent = msg;
+    t.classList.add("show");
+    setTimeout(function () { t.classList.remove("show"); }, 2200);
+  }
+
+  var qrcodeContainer = document.getElementById("qrcode");
+  var textInput = document.getElementById("textInput");
+  var generateBtn = document.getElementById("generateBtn");
+  var downloadBtn = document.getElementById("downloadBtn");
+
+  var qrCodeInstance = new QRCode(qrcodeContainer, {
+    text: textInput.value,
+    width: 220,
+    height: 220,
+    colorDark : "#4a3324",
+    colorLight : "#ffffff",
+    correctLevel : QRCode.CorrectLevel.H
+  });
+
+  function makeCode() {
+    var val = textInput.value.trim();
+    if (!val) {
+      toast("الرجاء إدخال نص أو رابط صحيح!");
+      return;
+    }
+    qrcodeContainer.innerHTML = "";
+    qrCodeInstance = new QRCode(qrcodeContainer, {
+      text: val,
+      width: 220,
+      height: 220,
+      colorDark : "#4a3324",
+      colorLight : "#ffffff",
+      correctLevel : QRCode.CorrectLevel.H
+    });
+    downloadBtn.style.display = "inline-flex";
+    toast("تم تحديث رمز QR بنجاح!");
+  }
+
+  generateBtn.addEventListener("click", makeCode);
+  textInput.addEventListener("input", makeCode);
+
+  document.querySelectorAll(".preset-btn").forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      textInput.value = this.getAttribute("data-val");
+      makeCode();
+    });
+  });
+
+  downloadBtn.addEventListener("click", function() {
+    var img = qrcodeContainer.querySelector("img");
+    if(img && img.src) {
+      var a = document.createElement("a");
+      a.href = img.src;
+      a.download = "Amira-Alqahtani-QR.png";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      toast("جاري تحميل الصورة...");
+    } else {
+      var canvas = qrcodeContainer.querySelector("canvas");
+      if(canvas) {
+        var a = document.createElement("a");
+        a.href = canvas.toDataURL("image/png");
+        a.download = "Amira-Alqahtani-QR.png";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        toast("جاري تحميل الصورة...");
+      }
+    }
+  });
+</script>
+</body>
+</html>
